@@ -132,6 +132,6 @@ bindkey -M viins '^e' end-of-line
 HOSTNAME=$(hostname -s)
 ZSHRC_LOCAL="~/.dotfiles/zshrc-${HOSTNAME}"
 
-if [ -f $ZSHRC_LOCAL ]; then
-    source $ZSHRC_LOCAL
+if [[ -f ${~ZSHRC_LOCAL} ]]; then
+    source ${~ZSHRC_LOCAL}
 fi
