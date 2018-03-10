@@ -1,0 +1,7 @@
+export EDITOR=nvim
+export PATH=~/go/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+
+# Set the colors for iTerm2 (matches Neutron theme)
+echo -ne "\033]6;1;bg;red;brightness;37\a"
+echo -ne "\033]6;1;bg;green;brightness;40\a"
+echo -ne "\033]6;1;bg;blue;brightness;46\a"

@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "sshfindagent"]
+	path = sshfindagent
+	url = https://github.com/wwalker/ssh-find-agent

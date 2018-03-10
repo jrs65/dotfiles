@@ -1,0 +1,4 @@
+# Execute zshif it exists
+if type zsh; then
+    zsh
+endif

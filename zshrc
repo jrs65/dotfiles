@@ -117,8 +117,11 @@ bindkey -M viins '\eh' run-help
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# Search with arrow keys, and Ctrl-p/n
 bindkey '^p' history-substring-search-up
 bindkey '^n' history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 bindkey -M vicmd '\-' vi-repeat-find
 bindkey -M vicmd '_' vi-rev-repeat-find
@@ -129,8 +132,11 @@ bindkey -M vicmd '\e.' insert-last-word
 bindkey -M viins '^a' beginning-of-line
 bindkey -M viins '^e' end-of-line
 
+# Fix up weird default backspace behaviour
+bindkey -v '^?' backward-delete-char 
+
 HOSTNAME=$(hostname -s)
-ZSHRC_LOCAL="~/.dotfiles/zshrc-${HOSTNAME}"
+ZSHRC_LOCAL="~/.zshrc-local"
 
 if [[ -f ${~ZSHRC_LOCAL} ]]; then
     source ${~ZSHRC_LOCAL}
