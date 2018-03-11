@@ -3,4 +3,4 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "sshfindagent"]
 	path = sshfindagent
-	url = https://github.com/wwalker/ssh-find-agent
+	url = https://github.com/jrs65/ssh-find-agent
