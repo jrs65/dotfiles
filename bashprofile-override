@@ -1,0 +1,4 @@
+# Execute zshif it exists
+export SHELL=`which zsh`
+[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
+
