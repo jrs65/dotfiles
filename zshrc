@@ -18,7 +18,9 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 # Essential
+export ZPLUG_HOME="${HOME}/.zplug"
 source ~/.zplug/init.zsh
+
 
 # Get zplug to self manage
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
