@@ -1,0 +1,8 @@
+
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.bash_profile: "bashprofile-override"
+    ~/.zshrc-local: "zshrc-niagara"
