@@ -1,0 +1,12 @@
+export EDITOR=vim
+
+export ALPENHORN_LOG_FILE=/home/k/krs/jrs65/chime/logs/alpenhorn.log
+
+source /scinet/niagara/etc/profile.d/00-environment.sh
+source /scinet/niagara/etc/profile.d/01-modules.sh
+source /scinet/niagara/etc/profile.d/02-slurm.sh
+source /scinet/niagara/etc/profile.d/03-bashenv.sh
+source /scinet/niagara/etc/profile.d/04-anaconda-fix.sh
+
+source /home/k/krs/jrs65/chime/chime_env/stable.sh
+

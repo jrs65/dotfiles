@@ -1,0 +1,8 @@
+# Execute zshif it exists
+if [[ $- == *i* ]]
+then
+    export SHELL=`which zsh`
+    [ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
+else
+    source ~/.bashrc
+fi

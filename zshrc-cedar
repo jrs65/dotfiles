@@ -1,0 +1,8 @@
+export EDITOR=vim
+
+source /cvmfs/soft.computecanada.ca/config/profile.d/z-000-init.sh
+source /cvmfs/soft.computecanada.ca/config/profile.d/z-15-override.sh
+source /cvmfs/soft.computecanada.ca/config/profile.d/z-20-lmod.sh
+
+source /project/rpp-krs/chime/chime_env/stable.sh
+

@@ -1,7 +1,9 @@
 export EDITOR=vim
 
 # Setup ssh agent
-source ~/.dotfiles/sshfindagent/ssh-find-agent.sh
-ssh-find-agent -a || eval $(ssh-agent) > /dev/null
+if [ $HOSTNAME = "tubular" ]; then
+    source ~/.dotfiles/sshfindagent/ssh-find-agent.sh
+    ssh-find-agent -a || eval $(ssh-agent) > /dev/null
+fi
 
 alias ssh="ssh -o ForwardAgent=yes"

@@ -18,7 +18,9 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 # Essential
+export ZPLUG_HOME="${HOME}/.zplug"
 source ~/.zplug/init.zsh
+
 
 # Get zplug to self manage
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -27,7 +29,13 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+
+# Install theme. Note that spaceship has a minimum version requirement so we switch themes on older versions of zsh
+if [[ $(zsh --version | awk '{print $2}') > 5.2.0 ]]; then
+    zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+else
+    zplug "themes/tjkirch", from:oh-my-zsh, as:theme
+fi
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -145,3 +153,4 @@ fi
 if (( $+commands[nvim] )) ; then
 	alias vim=nvim
 fi
+
