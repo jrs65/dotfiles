@@ -40,6 +40,20 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Make sure you use single quotes
+Plug 'morhetz/gruvbox'
+
+" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Initialize plugin system
+call plug#end()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,7 +107,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -148,16 +162,16 @@ set foldcolumn=1
 syntax enable 
 
 " Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
+"if $COLORTERM == 'gnome-terminal'
+"set t_Co=256
+"endif
 
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
+"try
+"    colorscheme desert
+"catch
+"endtry
+"
+"set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -396,3 +410,33 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+set termguicolors
+colorscheme gruvbox
+set background=dark
+hi vertsplit gui=None guibg=#282828 guifg=#928374
+hi LineNr guifg=#3c3836
+hi StatusLine gui=None guibg=#282828 guifg=#928374
+hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
+hi Search guibg=#282828 guifg=#928374
+hi Default guibg=#282828
+hi clear SignColumn
+hi SignColumn guibg=#282828 guifg=#928374
+hi GitGutterAdd guibg=#282828 guifg=#928374
+hi GitGutterChange guibg=#282828 guifg=#928374
+hi GitGutterDelete guibg=#282828 guifg=#928374
+hi GitGutterChangeDelete guibg=#282828 guifg=#928374
+hi SignColumn guibg=#282828 guifg=#928374
+hi SignColumn guibg=#282828 guifg=#928374
+"hi GitGutterAdd ctermbg=235 ctermfg=245
+"hi GitGutterChange ctermbg=235 ctermfg=245
+"hi GitGutterDelete ctermbg=235 ctermfg=245
+"hi GitGutterChangeDelete ctermbg=235 ctermfg=245
+hi EndOfBuffer guibg=#282828 guifg=#3c3836
+
+set foldcolumn=0
+set statusline=%=%P\ %f\ %m
+set showtabline=1
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+set noshowmode
+set laststatus=2

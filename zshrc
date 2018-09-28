@@ -141,3 +141,7 @@ ZSHRC_LOCAL="~/.zshrc-local"
 if [[ -f ${~ZSHRC_LOCAL} ]]; then
     source ${~ZSHRC_LOCAL}
 fi
+
+if (( $+commands[nvim] )) ; then
+	alias vim=nvim
+fi

@@ -1,5 +1,6 @@
 export EDITOR=nvim
 export PATH=~/go/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+export PATH=/Library/TeX/texbin/:$PATH
 
 # Set the colors for iTerm2 (matches Neutron theme)
 echo -ne "\033]6;1;bg;red;brightness;37\a"
