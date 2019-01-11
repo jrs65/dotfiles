@@ -5,3 +5,6 @@
 
 - link:
     ~/.zshrc-local: "zshrc-laptop"
+    ~/.hammerspoon: "hammerspoon"
+    ~/.config/karabiner: "karabiner"
+

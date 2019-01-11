@@ -47,6 +47,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Make sure you use single quotes
 Plug 'morhetz/gruvbox'
+Plug 'jceb/vim-orgmode'
 
 " On-demand loading
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -71,6 +72,10 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
+
+" ... map the local leader
+let maplocalleader = "\\"
+let g:maplocalleader = "\\"
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -212,7 +217,7 @@ set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=80
 
 set ai "Auto indent
 set si "Smart indent
