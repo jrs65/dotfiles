@@ -5,6 +5,7 @@
       create: true
 
 - link:
+    ~/.ssh/config: "ssh"
     ~/.zshrc-local: "zshrc-laptop"
     ~/.hammerspoon: "hammerspoon"
     ~/.config/karabiner:
