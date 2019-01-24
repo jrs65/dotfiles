@@ -48,6 +48,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 Plug 'morhetz/gruvbox'
 Plug 'jceb/vim-orgmode'
+Plug 'vimwiki/vimwiki'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'alok/notational-fzf-vim'
+Plug 'ap/vim-buftabline'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 
 " On-demand loading
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -78,7 +85,7 @@ let maplocalleader = "\\"
 let g:maplocalleader = "\\"
 
 " Fast saving
-nmap <leader>w :w!<cr>
+" nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -440,8 +447,27 @@ hi SignColumn guibg=#282828 guifg=#928374
 hi EndOfBuffer guibg=#282828 guifg=#3c3836
 
 set foldcolumn=0
-set statusline=%=%P\ %f\ %m
-set showtabline=1
+set statusline=%=%P\ -\ L%l:%c\ -\ %f\ %m
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 set noshowmode
 set laststatus=2
+
+
+" Vimwiki config
+let g:vimwiki_list = [{'path': '~/Notes/',
+                   \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:nv_search_paths = ['~/Notes']
+let g:vimwiki_global_ext = 0
+
+" buftabline config
+let g:buftabline_show=1
+let g:buftabline_numbers=1
+let g:buftabline_indicators=1
+hi BufTabLineCurrent gui=None guibg=#282828 guifg=#FB4934
+hi BufTabLineHidden gui=None guibg=#282828 guifg=#928374
+"hi TabLineSel gui=None guibg=#282828 guifg=#928374
+"hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
+
+" Autocompletion (deoplete)
+let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources#jedi#show_docstring=1
