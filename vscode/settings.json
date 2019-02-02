@@ -1,0 +1,81 @@
+{
+    "workbench.colorTheme": "Nord",
+    "editor.wordWrapColumn": 80,
+    "editor.minimap.enabled": false,
+
+    // When enabled, will trim trailing whitespace when saving a file.
+    "files.trimTrailingWhitespace": true,
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        }
+    ],
+
+    // Controls the font family.
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+
+    // The path of the shell that the terminal uses on OS X.
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+
+    // VIM mode settings
+    "vim.easymotion": true,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.activityBar.visible": false,
+
+    // The default PDF viewer.
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.command": {
+        "command": "/Users/richard/bin/displayfile",
+        "args": [
+            "-r", "%PDF%"
+        ]
+    },
+    "latex-workshop.view.pdf.external.synctex": {
+        "command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+        "args": [
+            "-r", "%LINE%", "%PDF%", "%TEX%"
+        ]
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.renderControlCharacters": true,
+    "workbench.sideBar.location": "left",
+    "breadcrumbs.enabled": true,
+    "editor.wordBasedSuggestions": false,
+    "cSpell.language": "en,en-GB",
+    "cSpell.userWords": [
+        "upweight"
+    ],
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pub",
+        "restructuredtext",
+        "rust",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yml"
+    ]
+}

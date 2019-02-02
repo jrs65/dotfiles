@@ -1,4 +1,4 @@
-
+# Config only for my Macbooks
 - defaults:
     link:
       relink: true
@@ -11,4 +11,6 @@
     ~/.config/karabiner:
       path: "karabiner"
       force: true
-
+    ~/Library/Application Support/Code/User/settings.json:
+        path: vscode/settings.json
+        create: true
