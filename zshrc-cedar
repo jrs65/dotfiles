@@ -4,5 +4,27 @@ source /cvmfs/soft.computecanada.ca/config/profile.d/z-000-init.sh
 source /cvmfs/soft.computecanada.ca/config/profile.d/z-15-override.sh
 source /cvmfs/soft.computecanada.ca/config/profile.d/z-20-lmod.sh
 
-source /project/rpp-krs/chime/chime_env/stable.sh
+#source /project/6003614/chime/chime_env/2019_01_py3/stable_py3.sh
+source /project/rpp-krs/chime/chime_env/2019_04/stable_base.sh
+source /home/jrs65/chime_pipeline_dev/venv/bin/activate
+
+OPT=/home/jrs65/opt
+
+for subdir in $OPT/*/bin
+do
+    export PATH=$subdir:$PATH
+done
+
+for subdir in $OPT/*/include
+do
+    export CPATH=$subdir:$CPATH
+done
+
+for subdir in $OPT/*/lib
+do
+    export LIBRARY_PATH=$subdir:$LIBRARY_PATH
+    export LD_LIBRARY_PATH=$subdir:$LD_LIBRARY_PATH
+done
+
+
 
