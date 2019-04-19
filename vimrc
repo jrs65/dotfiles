@@ -469,5 +469,5 @@ hi BufTabLineHidden gui=None guibg=#282828 guifg=#928374
 "hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 
 " Autocompletion (deoplete)
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 "let g:deoplete#sources#jedi#show_docstring=1
