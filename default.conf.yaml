@@ -1,6 +1,8 @@
+# Common deployments for all hosts I use
 - defaults:
     link:
       relink: true
+      create: true
 
 - clean: ['~']
 

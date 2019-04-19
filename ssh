@@ -1,0 +1,49 @@
+ControlMaster auto
+ControlPath  ~/.ssh/tmp/%h_%p_%r
+
+Host *
+     ServerAliveInterval 60
+     UseKeychain yes
+     PubkeyAcceptedKeyTypes +ssh-dss
+
+
+# Useful forwarding into CITA (particularly tunnel for Mathematica)
+Host cita
+   Hostname gw.cita.utoronto.ca
+   User jrs65
+   LocalForward 16286 licserv:16286
+
+
+## SciNet stuff
+Host niagara
+     User jrs65
+     Hostname niagara.scinet.utoronto.ca
+     ControlMaster no     
+
+
+## Cedar
+Host cedar
+     User jrs65
+     Hostname cedar.computecanada.ca
+     ControlMaster no     
+
+
+## CHIME
+Host niedermayer.phas.ubc.ca
+   Host niedermayer.phas.ubc.ca
+   User jrs65
+
+Host tubular
+     Hostname tubular.chimenet.ca
+     User jrs65
+
+# Internal alias for tubular to get around NRC idiocy
+Host dtubular
+     Hostname 192.168.72.76
+     User jrs65
+
+# Set up transparent forward to these internal machines
+Host wind carillon recv1 recv2 agogo marimba coconut
+     User jrs65
+     ProxyCommand ssh -W %h:%p tubular
+
