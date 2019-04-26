@@ -222,9 +222,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak on 500 characters
+" Linebreak on 100 characters
 set lbr
-set tw=80
+set tw=100
 
 set ai "Auto indent
 set si "Smart indent
@@ -355,15 +355,6 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
-
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
@@ -423,13 +414,13 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
+
+" Configure the color scheme
 set termguicolors
 colorscheme gruvbox
 set background=dark
 hi vertsplit gui=None guibg=#282828 guifg=#928374
 hi LineNr guifg=#3c3836
-hi StatusLine gui=None guibg=#282828 guifg=#928374
-hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 hi Search guibg=#282828 guifg=#928374
 hi Default guibg=#282828
 hi clear SignColumn
@@ -447,17 +438,20 @@ hi SignColumn guibg=#282828 guifg=#928374
 hi EndOfBuffer guibg=#282828 guifg=#3c3836
 
 set foldcolumn=0
-set statusline=%=%P\ -\ L%l:%c\ -\ %f\ %m
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 set noshowmode
 set laststatus=2
+set statusline=%=%P\ -\ L%l:%c\ -\ %f\ %m
+hi StatusLine gui=None guibg=#282828 guifg=#928374
+hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 
 
 " Vimwiki config
-let g:vimwiki_list = [{'path': '~/Notes/',
-                   \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:nv_search_paths = ['~/Notes']
+let g:vimwiki_list = [{'path': '~/Notes/', 'syntax': 'markdown', 'ext': '.md'},
+                    \ {'path': '~/Recipes/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:nv_search_paths = ['~/Notes', '~/Recipes']
 let g:vimwiki_global_ext = 0
+
 
 " buftabline config
 let g:buftabline_show=1
@@ -465,8 +459,6 @@ let g:buftabline_numbers=1
 let g:buftabline_indicators=1
 hi BufTabLineCurrent gui=None guibg=#282828 guifg=#FB4934
 hi BufTabLineHidden gui=None guibg=#282828 guifg=#928374
-"hi TabLineSel gui=None guibg=#282828 guifg=#928374
-"hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 
 " Autocompletion (deoplete)
 "let g:deoplete#enable_at_startup = 1
