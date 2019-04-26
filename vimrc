@@ -58,8 +58,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'alok/notational-fzf-vim'
 Plug 'ap/vim-buftabline'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-jedi'
 
 " On-demand loading
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -454,7 +454,7 @@ hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 " Vimwiki config
 let g:vimwiki_list = [{'path': '~/Notes/', 'syntax': 'markdown', 'ext': '.md'},
                     \ {'path': '~/Recipes/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:nv_search_paths = ['~/Notes', '~/Recipes']
+let g:nv_search_paths = ['~/Notes']
 let g:vimwiki_global_ext = 0
 
 
@@ -466,5 +466,5 @@ hi BufTabLineCurrent gui=None guibg=#282828 guifg=#FB4934
 hi BufTabLineHidden gui=None guibg=#282828 guifg=#928374
 
 " Autocompletion (deoplete)
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 "let g:deoplete#sources#jedi#show_docstring=1
