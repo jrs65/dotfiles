@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Nord",
     "editor.wordWrapColumn": 80,
     "editor.minimap.enabled": false,
 
@@ -77,5 +76,8 @@
         "typescript",
         "typescriptreact",
         "yml"
-    ]
+    ],
+    "vim.leader": ",",
+    "workbench.colorTheme": "Nord",
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false
 }
