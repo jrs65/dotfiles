@@ -79,5 +79,9 @@
     ],
     "vim.leader": ",",
     "workbench.colorTheme": "Nord",
-    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.pythonPath": "python2"
 }
