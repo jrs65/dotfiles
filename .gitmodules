@@ -4,3 +4,15 @@
 [submodule "sshfindagent"]
 	path = sshfindagent
 	url = https://github.com/jrs65/ssh-find-agent
+[submodule "zsh/history-substring-search"]
+	path = zsh/history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "zsh/fsh"]
+	path = zsh/fsh
+	url = https://github.com/zdharma/fast-syntax-highlighting
+[submodule "zsh/autosuggestions"]
+	path = zsh/autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/p10k"]
+	path = zsh/p10k
+	url = https://github.com/romkatv/powerlevel10k.git

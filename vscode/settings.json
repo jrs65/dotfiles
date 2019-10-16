@@ -29,18 +29,10 @@
 
     // The default PDF viewer.
     "latex-workshop.view.pdf.viewer": "external",
-    "latex-workshop.view.pdf.external.command": {
-        "command": "/Users/richard/bin/displayfile",
-        "args": [
-            "-r", "%PDF%"
-        ]
-    },
-    "latex-workshop.view.pdf.external.synctex": {
-        "command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
-        "args": [
-            "-r", "%LINE%", "%PDF%", "%TEX%"
-        ]
-    },
+    "latex-workshop.view.pdf.external.viewer.command": "/Users/richard/bin/displayfile",
+    "latex-workshop.view.pdf.external.viewer.args": ["-r", "%PDF%"],
+    "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+    "latex-workshop.view.pdf.external.synctex.args": ["-r", "%LINE%", "%PDF%", "%TEX%"],
     "workbench.startupEditor": "newUntitledFile",
     "editor.renderControlCharacters": true,
     "workbench.sideBar.location": "left",
@@ -48,6 +40,12 @@
     "editor.wordBasedSuggestions": false,
     "cSpell.language": "en,en-GB",
     "cSpell.userWords": [
+        "dset",
+        "dtype",
+        "evec",
+        "fpga",
+        "kotekan",
+        "nprod",
         "upweight"
     ],
     "cSpell.enabledLanguageIds": [
@@ -79,5 +77,15 @@
     ],
     "vim.leader": ",",
     "workbench.colorTheme": "Nord",
-    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "window.zoomLevel": 0,
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.formatting.provider": "black",
+    "python.pythonPath": "/Users/richard/Projects/CHIME/quick/caput_mwm_fix/venv/bin/python",
+    "python.linting.flake8Args": [
+        "--max-line-length=88"
+    ]
 }
