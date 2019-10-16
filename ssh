@@ -35,6 +35,12 @@ Host cedar5
      Hostname cedar5.cedar.computecanada.ca
      ControlMaster no     
 
+Host cedar_code
+     User jrs65
+     Hostname cedar1.cedar.computecanada.ca
+     ControlMaster no     
+     RemoteCommand VSCODE=yes bash --noprofile
+
 ## CHIME
 Host niedermayer.phas.ubc.ca
    Host niedermayer.phas.ubc.ca
