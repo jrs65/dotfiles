@@ -19,6 +19,8 @@ source ${ZSH_PLUGINS}/autosuggestions/zsh-autosuggestions.zsh
 
 # Install theme. Note that p10k has a minimum version requirement so we switch themes on older versions of zsh
 if [[ $(zsh --version | awk '{print $2}') < 5.2.0 ]]; then
+    echo "Too old zsh for theme."
+else
     source ${ZSH_PLUGINS}/p10k/powerlevel10k.zsh-theme
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
     [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
