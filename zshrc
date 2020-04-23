@@ -11,68 +11,24 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
-# Check if zplug is installed, and install if needed
-if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update
-fi
+ZSH_PLUGINS=~/.dotfiles/zsh
+source ${ZSH_PLUGINS}/history-substring-search/zsh-history-substring-search.zsh
+source ${ZSH_PLUGINS}/fsh/fast-syntax-highlighting.plugin.zsh
+source ${ZSH_PLUGINS}/autosuggestions/zsh-autosuggestions.zsh
 
-# Essential
-export ZPLUG_HOME="${HOME}/.zplug"
-source ~/.zplug/init.zsh
+#zplug "plugins/ssh-agent",   from:oh-my-zsh
 
-
-# Get zplug to self manage
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-# Install zsh plugins
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "plugins/ssh-agent",   from:oh-my-zsh
-
-# Install theme. Note that spaceship has a minimum version requirement so we switch themes on older versions of zsh
-if [[ $(zsh --version | awk '{print $2}') > 5.2.0 ]]; then
-    zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
-else
-    # NOTE: these are good options for old ZSH installations
+# Install theme. Note that p10k has a minimum version requirement so we switch themes on older versions of zsh
+if [[ $(zsh --version | awk '{print $2}') < 5.2.0 ]]; then
+    echo "Too old zsh for theme."
     # zplug "themes/tjkirch", from:oh-my-zsh, as:theme
     # zplug "themes/dst", from:oh-my-zsh, as:theme
     zplug "win0err/aphrodite-terminal-theme", from:github, as:theme
+else
+    source ${ZSH_PLUGINS}/p10k/powerlevel10k.zsh-theme
+    # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+    [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 fi
-
-# Install packages that have not been installed yet
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
-
-zplug load
-
-# Configure prompt
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_BATTERY_SHOW=false
-# GIT
-# Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-# Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-# Unwrap git status from `[...]`
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
-
-# VENV
-SPACESHIP_VENV_PREFIX="venv:("
-SPACESHIP_VENV_SUFFIX=") "
-
-SPACESHIP_VI_MODE_SHOW=false
 
 # Vim like editing
 bindkey -v
@@ -147,6 +103,7 @@ bindkey -M viins '^e' end-of-line
 # Fix up weird default backspace behaviour
 bindkey -v '^?' backward-delete-char 
 
+
 HOSTNAME=$(hostname -s)
 ZSHRC_LOCAL="~/.zshrc-local"
 
@@ -160,4 +117,3 @@ if (( $+commands[nvim] )) ; then
 else
 	export EDITOR=vim
 fi
-

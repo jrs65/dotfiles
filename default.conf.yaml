@@ -1,3 +1,4 @@
+# Common deployments for all hosts I use
 - defaults:
     link:
       relink: true
@@ -7,6 +8,7 @@
 
 - link:
     ~/.zshrc:
+    ~/.p10k.zsh:
     ~/.config/nvim/init.vim: "vimrc"
     ~/.tmux.conf:
 
