@@ -1,7 +1,8 @@
-# Execute zshif it exists
-if [[ $- == *i* ]]
+# Execute zsh if it exists
+if [ -z "$VSCODE" ] && [[ $- == *i* ]]
 then
-    export SHELL=`which zsh`
+    # TODO: switch back to linuxbrew version
+    export SHELL=/home/jrs65/opt/zsh/bin/zsh
     [ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
 else
     source ~/.bashrc

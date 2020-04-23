@@ -4,9 +4,34 @@ source /cvmfs/soft.computecanada.ca/config/profile.d/z-000-init.sh
 source /cvmfs/soft.computecanada.ca/config/profile.d/z-15-override.sh
 source /cvmfs/soft.computecanada.ca/config/profile.d/z-20-lmod.sh
 
-#source /project/6003614/chime/chime_env/2019_01_py3/stable_py3.sh
-source /project/rpp-krs/chime/chime_env/2019_04/stable_base.sh
-source /home/jrs65/chime_pipeline_dev/venv/bin/activate
+# Add Homebrew into path
+eval $(~/.linuxbrew/bin/brew shellenv)
+
+# Python 3
+#source /project/rpp-krs/chime/chime_env/2018_04/stable_base.sh
+#source /home/jrs65/chime_pipeline/venv/bin/activate
+#
+#module load StdEnv/2018.3
+#module load nixpkgs/16.09
+#module load gcc/8.3.0
+#module load openmpi/4.0.1
+#module load python/3.8.0
+#module load scipy-stack/2019b
+
+module use /project/rpp-krs/chime/chime_env/modules/modulefiles/
+module load chime/python/2020.02
+module load chime/jupyterlab
+
+source /home/jrs65/chime_pipeline/venv/bin/activate
+
+
+# Python 2
+#source /project/rpp-krs/chime/chime_env/2019_04/stable_base.sh
+# source /home/jrs65/chime_pipeline_dev2/venv/bin/activate
+
+#source /home/jrs65/test_env/stable_base.sh
+
+export PATH=~/.local/bin/:$PATH
 
 OPT=/home/jrs65/opt
 
@@ -25,6 +50,3 @@ do
     export LIBRARY_PATH=$subdir:$LIBRARY_PATH
     export LD_LIBRARY_PATH=$subdir:$LD_LIBRARY_PATH
 done
-
-
-
