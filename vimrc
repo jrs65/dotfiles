@@ -56,7 +56,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'vimwiki/vimwiki'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'alok/notational-fzf-vim'
+"Plug 'alok/notational-fzf-vim'
 Plug 'ap/vim-buftabline'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'zchee/deoplete-jedi'
@@ -452,10 +452,10 @@ hi StatusLineNC gui=None guibg=#282828 guifg=#3c3836
 
 
 " Vimwiki config
-let g:vimwiki_list = [{'path': '~/Notes/', 'syntax': 'markdown', 'ext': '.md'},
-                    \ {'path': '~/Recipes/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:nv_search_paths = ['~/Notes']
-let g:vimwiki_global_ext = 0
+"let g:vimwiki_list = [{'path': '~/Notes/', 'syntax': 'markdown', 'ext': '.md'},
+"                    \ {'path': '~/Recipes/', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:nv_search_paths = ['~/Notes', '~/Recipes']
+"let g:vimwiki_global_ext = 0
 
 
 " buftabline config

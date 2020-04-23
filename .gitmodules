@@ -16,3 +16,9 @@
 [submodule "zsh/p10k"]
 	path = zsh/p10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/ssh-agent"]
+	path = zsh/ssh-agent
+	url = https://github.com/twang817/zsh-ssh-agent
+[submodule "zsh/aphrodite-theme"]
+	path = zsh/aphrodite-theme
+	url = https://github.com/win0err/aphrodite-terminal-theme

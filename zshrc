@@ -15,11 +15,12 @@ ZSH_PLUGINS=~/.dotfiles/zsh
 source ${ZSH_PLUGINS}/history-substring-search/zsh-history-substring-search.zsh
 source ${ZSH_PLUGINS}/fsh/fast-syntax-highlighting.plugin.zsh
 source ${ZSH_PLUGINS}/autosuggestions/zsh-autosuggestions.zsh
-
+source ${ZSH_PLUGINS}/ssh-agent/ssh-agent.plugin.zsh
 
 # Install theme. Note that p10k has a minimum version requirement so we switch themes on older versions of zsh
 if [[ $(zsh --version | awk '{print $2}') < 5.2.0 ]]; then
     echo "Too old zsh for theme."
+    source ${ZSH_PLUGINS}/aphrodite-theme/aphrodite.zsh-theme
 else
     source ${ZSH_PLUGINS}/p10k/powerlevel10k.zsh-theme
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -109,4 +110,7 @@ fi
 
 if (( $+commands[nvim] )) ; then
 	alias vim=nvim
+	export EDITOR=nvim
+else
+	export EDITOR=vim
 fi
