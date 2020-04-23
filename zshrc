@@ -29,12 +29,16 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/ssh-agent",   from:oh-my-zsh
 
 # Install theme. Note that spaceship has a minimum version requirement so we switch themes on older versions of zsh
 if [[ $(zsh --version | awk '{print $2}') > 5.2.0 ]]; then
     zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 else
-    zplug "themes/tjkirch", from:oh-my-zsh, as:theme
+    # NOTE: these are good options for old ZSH installations
+    # zplug "themes/tjkirch", from:oh-my-zsh, as:theme
+    # zplug "themes/dst", from:oh-my-zsh, as:theme
+    zplug "win0err/aphrodite-terminal-theme", from:github, as:theme
 fi
 
 # Install packages that have not been installed yet
@@ -152,5 +156,8 @@ fi
 
 if (( $+commands[nvim] )) ; then
 	alias vim=nvim
+	export EDITOR=nvim
+else
+	export EDITOR=vim
 fi
 
