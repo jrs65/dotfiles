@@ -15,7 +15,6 @@ ZSH_PLUGINS=~/.dotfiles/zsh
 source ${ZSH_PLUGINS}/history-substring-search/zsh-history-substring-search.zsh
 source ${ZSH_PLUGINS}/fsh/fast-syntax-highlighting.plugin.zsh
 source ${ZSH_PLUGINS}/autosuggestions/zsh-autosuggestions.zsh
-source ${ZSH_PLUGINS}/ssh-agent/ssh-agent.plugin.zsh
 
 # Install theme. Note that p10k has a minimum version requirement so we switch themes on older versions of zsh
 if [[ $ZSH_VERSION < 5.2.0 ]]; then

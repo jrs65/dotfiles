@@ -1,3 +1,6 @@
 export EDITOR=vim
 
+# Start an ssh-agent
+source ${ZSH_PLUGINS}/ssh-agent/ssh-agent.plugin.zsh
+
 alias ssh="ssh -o ForwardAgent=yes"
