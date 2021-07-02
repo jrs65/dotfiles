@@ -2,6 +2,7 @@
 if [ -z "$VSCODE" ] && [[ $- == *i* ]]
 then
     # TODO: switch back to linuxbrew version
+    export FPATH=/home/jrs65/opt/zsh/share/zsh/5.7.1/functions:/home/jrs65/opt/zsh/share/zsh/site-functions
     export SHELL=/home/jrs65/opt/zsh/bin/zsh
     [ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
 else
