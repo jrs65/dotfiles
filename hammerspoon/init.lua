@@ -14,6 +14,11 @@ hs.hotkey.bind(hyper, 'k', function()
     lgrid.show() 
 end)
 
+hs.hotkey.bind(hyper, 'l', function()
+    local lgrid = grid.setGrid('4x2').setMargins({8, 8})
+    lgrid.show() 
+end)
+
 hs.hotkey.bind(hyper, 'h', function()
     hs.hints.hintChars = {'f', 'j', 'd', 'k', 's', 'l', 'a', ';'}
     hs.hints.windowHints()
