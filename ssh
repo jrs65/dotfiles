@@ -1,18 +1,8 @@
-ControlMaster auto
-ControlPath  ~/.ssh/tmp/%h_%p_%r
-
-Host *
-     ServerAliveInterval 60
-     UseKeychain yes
-     PubkeyAcceptedKeyTypes +ssh-dss
-
-
 # Useful forwarding into CITA (particularly tunnel for Mathematica)
 Host cita
    Hostname gw.cita.utoronto.ca
    User jrs65
    LocalForward 16286 licserv:16286
-
 
 ## SciNet stuff
 Host niagara
@@ -20,31 +10,22 @@ Host niagara
      Hostname niagara.scinet.utoronto.ca
      ControlMaster no     
 
+## Cedar
+Host cedar?
+     User jrs65
+     Hostname %h.cedar.computecanada.ca
+     ForwardAgent yes
 
 ## Cedar
-Host cedar
+Host cdr*
      User jrs65
-     Hostname cedar.computecanada.ca
-     ControlMaster no     
-Host cedar1
-     User jrs65
-     Hostname cedar1.cedar.computecanada.ca
-     ControlMaster no     
-Host cedar5
-     User jrs65
-     Hostname cedar5.cedar.computecanada.ca
-     ControlMaster no     
-
-Host cedar_code
-     User jrs65
-     Hostname cedar1.cedar.computecanada.ca
-     ControlMaster no     
-     RemoteCommand VSCODE=yes bash --noprofile
+     ProxyJump cedar5
+     LocalForward 7500 127.0.0.1:8888
+     StrictHostKeyChecking accept-new
 
 ## CHIME
 Host niedermayer.phas.ubc.ca
-   Host niedermayer.phas.ubc.ca
-   User jrs65
+     User jrs65
 
 Host tubular
      Hostname tubular.chimenet.ca
@@ -56,7 +37,22 @@ Host dtubular
      User jrs65
 
 # Set up transparent forward to these internal machines
-Host wind carillon recv1 recv2 agogo marimba coconut
+Host wind carillon recv1 recv2 agogo marimba coconut cn6ls cs6ls csBfs
      User jrs65
-     ProxyCommand ssh -W %h:%p tubular
+     ProxyJump tubular
+     ForwardAgent yes
+
+# Set up transparent forward to the GPU nodes
+Host cn?g? cs?g?
+     User root
+     ProxyJump tubular
+     ForwardAgent yes
+
+Host *
+     UseKeychain yes
+     ControlMaster auto
+     ServerAliveInterval 60
+     ControlPath  ~/.ssh/multiplex/%h_%p_%r
+     ControlPersist 5m
+
 
