@@ -1,5 +1,4 @@
 {
-    "editor.wordWrapColumn": 80,
     "editor.minimap.enabled": false,
 
     // When enabled, will trim trailing whitespace when saving a file.
@@ -91,16 +90,38 @@
         "yml"
     ],
     "vim.leader": ",",
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Solarized Light",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
     "C_Cpp.updateChannel": "Insiders",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "window.zoomLevel": 0,
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
     "python.formatting.provider": "black",
     "python.pythonPath": "/Users/richard/Projects/CHIME/quick/caput_mwm_fix/venv/bin/python",
     "python.linting.flake8Args": [
         "--max-line-length=88"
-    ]
+    ],
+    "cmake.configureOnOpen": true,
+    "editor.wordWrapColumn": 88,
+    "vim.textwidth": 88,
+    "autoDocstring.docstringFormat": "numpy",
+    "cSpell.enableFiletypes": [
+        "python"
+    ],
+    "editor.wordWrap": "off",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "customizeUI.titleBar": "regular",
+    "python.showStartPage": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "restructuredtext.languageServer.disabled": true,
+    "editor.tabSize": 8,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "python.defaultInterpreterPath": "/Users/richard/Projects/CHIME/quick/caput_mwm_fix/venv/bin/python"
 }
