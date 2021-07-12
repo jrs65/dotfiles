@@ -22,3 +22,6 @@
 [submodule "zsh/aphrodite-theme"]
 	path = zsh/aphrodite-theme
 	url = https://github.com/win0err/aphrodite-terminal-theme
+[submodule "nvim/packer"]
+	path = nvim/packer
+	url = https://github.com/wbthomason/packer.nvim
